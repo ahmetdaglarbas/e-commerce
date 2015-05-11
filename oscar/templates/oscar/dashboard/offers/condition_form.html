@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block form_fields %}
-    <span class="error-block">{{ form.non_field_errors }}</span>
+  {% comment %}  <span class="error-block">{{ form.non_field_errors }}</span> {% endcomment %}
 
     {% if form.fields.custom_condition.choices %}
-    <h4>{% trans "Build a new condition" %}</h4>
+    <h4>Koşul</h4>
     {% endif %}
 	{% include "partials/form_field.html" with field=form.range %}
     <p>
@@ -27,10 +27,10 @@
 	{% include "partials/form_field.html" with field=form.type %}
 	{% include "partials/form_field.html" with field=form.value %}
 
-    {% if form.fields.custom_condition.choices %}
+  {% comment %}  {% if form.fields.custom_condition.choices %}
         <h4>{% trans "...or choose a pre-defined one" %}</h4>
         {% include "partials/form_field.html" with field=form.custom_condition %}
-    {% endif %}
+    {% endif %} {% endcomment %}
 {% endblock %}
 
 {% block submittext %}{% trans "Continue to step 4" %}{% endblock %}

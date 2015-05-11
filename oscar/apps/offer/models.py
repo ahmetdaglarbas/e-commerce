@@ -71,7 +71,7 @@ class ConditionalOffer(models.Model):
         help_text=_("This is displayed within the customer's basket"))
     slug = fields.AutoSlugField(
         _("Slug"), max_length=128, unique=True, populate_from='name')
-    description = models.TextField(_("Description"), blank=True,
+    description = models.TextField(_('Description'), blank=True,
                                    help_text=_("This is displayed on the offer"
                                                " browsing page"))
 
@@ -552,14 +552,14 @@ class Benefit(models.Model):
     TYPE_CHOICES = (
         (PERCENTAGE, _("Discount is a percentage off of the product's value")),
         (FIXED, _("Discount is a fixed amount off of the product's value")),
-        (MULTIBUY, _("Discount is to give the cheapest product for free")),
-        (FIXED_PRICE,
-         _("Get the products that meet the condition for a fixed price")),
-        (SHIPPING_ABSOLUTE,
-         _("Discount is a fixed amount of the shipping cost")),
-        (SHIPPING_FIXED_PRICE, _("Get shipping for a fixed price")),
-        (SHIPPING_PERCENTAGE, _("Discount is a percentage off of the shipping"
-                                " cost")),
+       # (MULTIBUY, _("Discount is to give the cheapest product for free")),
+       # (FIXED_PRICE,
+       #  _("Get the products that meet the condition for a fixed price")),
+       # (SHIPPING_ABSOLUTE,
+       #  _("Discount is a fixed amount of the shipping cost")),
+       # (SHIPPING_FIXED_PRICE, _("Get shipping for a fixed price")),
+       # (SHIPPING_PERCENTAGE, _("Discount is a percentage off of the shipping"
+       #                         " cost")),
     )
     type = models.CharField(
         _("Type"), max_length=128, choices=TYPE_CHOICES, blank=True)

@@ -36,7 +36,7 @@
         <span class="divider">/</span>
     </li>
     {% endif %}
-    <li class="active">{{ title }}</li>
+    <li class="active">{% if title == "Condition" %}Koşul{% else %} {{ title }}{% endif %}</li>
 </ul>
 {% endblock %}
 
@@ -57,8 +57,8 @@
         </div>
         <div class="{% if session_offer %}span6{% else %}span9{% endif %}">
             <form action="." method="post" class="form-stacked wysiwyg fixed-actions">
-                <div class="table-header">
-                    <h3>{{ title }}</h3>
+                <div  class="table-header">
+                    <h3>{% if title == "Condition" %}Koşul{% else %} {{ title }}{% endif %}</h3>
                 </div>
                 <div class="well">
                     {% csrf_token %}

@@ -86,10 +86,10 @@
         <ul class="nav nav-tabs">
             {% block nav_tabs %}
                 <li class="{% if active_tab == 'lines' %}active{% endif %}"><a href="#lines" data-toggle="tab">{% trans "Order contents" %}</a></li>
-                <li class="{% if active_tab == 'shipping' %}active{% endif %}"><a href="#shipping" data-toggle="tab">{% trans "Shipping" %}</a></li>
-                <li class="{% if active_tab == 'payment' %}active{% endif %}"><a href="#payment" data-toggle="tab">{% trans "Payment" %}</a></li>
-                <li class="{% if active_tab == 'discounts' %}active{% endif %}"><a href="#discounts" data-toggle="tab">{% trans "Discounts" %}</a></li>
-                <li class="{% if active_tab == 'notes' %}active{% endif %}"><a href="#notes" data-toggle="tab">{% trans "Notes" %}</a></li>
+                {% comment %} <li class="{% if active_tab == 'shipping' %}active{% endif %}"><a href="#shipping" data-toggle="tab">{% trans "Shipping" %}</a></li> {% endcomment %}
+                {% comment %} <li class="{% if active_tab == 'payment' %}active{% endif %}"><a href="#payment" data-toggle="tab">{% trans "Payment" %}</a></li> {% endcomment %}
+                {% comment %} <li class="{% if active_tab == 'discounts' %}active{% endif %}"><a href="#discounts" data-toggle="tab">{% trans "Discounts" %}</a></li> {% endcomment %}
+                {% comment %} <li class="{% if active_tab == 'notes' %}active{% endif %}"><a href="#notes" data-toggle="tab">{% trans "Notes" %}</a></li> {% endcomment %}
             {% endblock nav_tabs %}
         </ul>
 
@@ -105,18 +105,18 @@
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th></th>
-                                    <th>{% trans "Line ID" %}</th>
+                                   {% comment %} <th></th> {% endcomment %}
+                                   {% comment %} <th>{% trans "Line ID" %}</th> {% endcomment %}
                                     <th>{% trans "Quantity" %}</th>
                                     <th>{% trans "Product" %}</th>
                                     <th>{% trans "UPC" %}</th>
                                     <th>{% trans "Status" %}</th>
                                     <th>{% trans "Supplier" %}</th>
                                     <th>{% trans "Supplier SKU" %}</th>
-                                    <th>{% trans "Est. dispatch date" %}</th>
-                                    <th>{% trans "Price excl tax (before discounts)" %}</th>
-                                    <th>{% trans "Price inc tax (before discounts)" %}</th>
-                                    <th>{% trans "Actions" %}</th>
+                                   {% comment %} <th>{% trans "Est. dispatch date" %}</th> {% endcomment %}
+                                   {% comment %} <th>{% trans "Price excl tax (before discounts)" %}</th> {% endcomment %}
+                                   {% comment %} <th>{% trans "Price inc tax (before discounts)" %}</th> {% endcomment %}
+                                   {% comment %} <th>{% trans "Actions" %}</th> {% endcomment %}
                                 </tr>
                             </thead>
                             <tbody>
@@ -125,11 +125,11 @@
                                         <td>
                                             <input type="checkbox" name="selected_line" value="{{ line.id }}" />
                                         </td>
-                                        <td>
+                                       {% comment %} <td>
                                             <input type="text" name="selected_line_qty_{{ line.id }}" value="{{ line.quantity }}" class="span1" size="2" style="width:40px" />
-                                        </td>
-                                        <td><a href="{% url 'dashboard:order-line-detail' number=order.number line_id=line.id %}">#{{ line.id }}</a></td>
-                                        <td>{{ line.quantity }}</td>
+                                        </td> {% endcomment %}
+                                        {% comment %} <td><a href="{% url 'dashboard:order-line-detail' number=order.number line_id=line.id %}">#{{ line.id }}</a></td> {% endcomment %}
+                                         <td>{{ line.quantity }}</td> 
                                         <td>
                                             {% if line.product %}
                                                 <a href="{% url 'dashboard:catalogue-product' pk=line.product.id %}">{{ line.title }}</a>
@@ -147,104 +147,104 @@
                                             {% endif %}
                                         </td>
                                         <td>{{ line.partner_sku }}</td>
-                                        <td>{{ line.est_dispatch_date|default:"-" }}</td>
-                                        <td style="text-align: right">{{ line.line_price_before_discounts_excl_tax|currency:order.currency }}</td>
-                                        <td style="text-align: right">{{ line.line_price_before_discounts_incl_tax|currency:order.currency }}</td>
-                                        <td>
+                                      {% comment %}  <td>{{ line.est_dispatch_date|default:"-" }}</td> {% endcomment %}
+                                      {% comment %} <td style="text-align: right">{{ line.line_price_before_discounts_excl_tax|currency:order.currency }}</td> {% endcomment %}
+                                     {% comment %} <td style="text-align: right">{{ line.line_price_before_discounts_incl_tax|currency:order.currency }}</td> {% endcomment %}
+                                        {% comment %} <td>
                                             <a href="{% url 'dashboard:order-line-detail' number=order.number line_id=line.id %}" class="btn btn-info">{% trans "View" %}</a>
-                                        </td>
+                                        </td> {% endcomment %}
                                     </tr>
                                 {% endfor %}
 
                                 <tr>
-                                    <td colspan="9"></td>
+                                    <td colspan="4"></td>
                                     <th>{% trans "Discount" %}</th>
                                     <td style="text-align: right">{{ order.total_discount_excl_tax|currency:order.currency }}</td>
                                     <td style="text-align: right">{{ order.total_discount_incl_tax|currency:order.currency }}</td>
-                                    <td></td>
+                               {% comment %}    <td></td> {% endcomment %}
                                 </tr>
                                 {% with discounts=order.basket_discounts %}
                                     {% if discounts %}
                                         <tr>
-                                            <td colspan="9"></td>
+                                            <td colspan="4"></td>
                                             <th>{% trans "Basket total (excl. discounts)" %}</th>
                                             <td style="text-align: right">{{ order.basket_total_before_discounts_excl_tax|currency:order.currency }}</td>
                                             <td style="text-align: right">{{ order.basket_total_before_discounts_incl_tax|currency:order.currency }}</td>
-                                            <td></td>
+                                         {% comment %}   <td></td> {% endcomment %}
                                         </tr>
                                         {% for discount in discounts %}
                                             <tr>
-                                                <td colspan="9"></td>
+                                                <td colspan="4"></td>
                                                 <td>
                                                     <span class="label label-success">{% trans "Discount" %}</span>
                                                     {{ discount.offer_name }}
                                                 </td>
                                                 <td style="text-align: right"></td>
                                                 <td style="text-align: right">- {{ discount.amount|currency:order.currency }}</td>
-                                                <td></td>
+                                      {% comment %}  <td></td> {% endcomment %}
                                             </tr>
                                         {% endfor %}
                                         <tr>
-                                            <td colspan="9"></td>
+                                            <td colspan="4"></td>
                                             <th>{% trans "Basket total (inc. discounts)" %}</th>
                                             <th style="text-align: right">{{ order.basket_total_excl_tax|currency:order.currency }}</th>
                                             <th style="text-align: right">{{ order.basket_total_incl_tax|currency:order.currency }}</th>
-                                            <td></td>
+                                       {% comment %}  <td></td> {% endcomment %}
                                         </tr>
                                     {% else %}
                                         <tr>
-                                            <td colspan="9"></td>
+                                            <td colspan="4"></td>
                                             <th>{% trans "Basket total" %}</th>
                                             <th style="text-align: right">{{ order.basket_total_excl_tax|currency:order.currency }}</th>
                                             <th style="text-align: right">{{ order.basket_total_incl_tax|currency:order.currency }}</th>
-                                            <td></td>
+                                          {% comment %}  <td></td> {% endcomment %}
                                         </tr>
                                     {% endif %}
                                 {% endwith %}
 
                                 {% if order.has_shipping_discounts %}
                                     <tr>
-                                        <td colspan="9"></td>
+                                        <td colspan="4"></td>
                                         <td>{% trans "Shipping total (excl. discounts)" %}</td>
                                         <td style="text-align: right">{{ order.shipping_before_discounts_excl_tax|currency:order.currency }}</td>
                                         <td style="text-align: right">{{ order.shipping_before_discounts_incl_tax|currency:order.currency }}</td>
-                                        <td></td>
+                                      {% comment %}  <td></td> {% endcomment %}
                                     </tr>
                                     {% for discount in order.shipping_discounts %}
                                         <tr>
-                                            <td colspan="9"></td>
+                                            <td colspan="4"></td>
                                             <td>
                                                 <span class="label label-success">{% trans "Discount" %}</span>
                                                 {{ discount.offer_name }}
                                             </td>
                                             <td></td>
                                             <td style="text-align: right">- {{ discount.amount|currency:order.currency }}</td>
-                                            <td></td>
+                                          {% comment %}  <td></td> {% endcomment %}
                                         </tr>
                                     {% endfor %}
                                     <tr>
-                                        <td colspan="9"></td>
+                                        <td colspan="4"></td>
                                         <th>{% trans "Shipping total (inc. discounts)" %}</th>
                                         <th style="text-align: right">{{ order.shipping_excl_tax|currency:order.currency }}</th>
                                         <th style="text-align: right">{{ order.shipping_incl_tax|currency:order.currency }}</th>
-                                        <td></td>
+                                       {% comment %} <td></td> {% endcomment %}
                                     </tr>
                                 {% else %}
                                     <tr>
-                                        <td colspan="9"></td>
+                                        <td colspan="4"></td>
                                         <th>{% trans "Shipping total" %}</th>
                                         <th style="text-align: right">{{ order.shipping_excl_tax|currency:order.currency }}</th>
                                         <th style="text-align: right">{{ order.shipping_incl_tax|currency:order.currency }}</th>
-                                        <td></td>
+                                       {% comment %} <td></td> {% endcomment %}
                                     </tr>
                                 {% endif %}
 
                                 <tr>
-                                    <td colspan="9"></td>
+                                    <td colspan="4"></td>
                                     <th>{% trans "Order total" %}</th>
                                     <th style="text-align: right">{{ order.total_excl_tax|currency:order.currency }}</th>
                                     <th style="text-align: right">{{ order.total_incl_tax|currency:order.currency }}</th>
-                                    <td></td>
+                                    {% comment %} <td></td> {% endcomment %}
                                 </tr>
                             </tbody>
                         </table>
@@ -255,7 +255,7 @@
                         override this block to provide your own form widgets that suit your order processing
                         flow.  The default contents shows a range of widgets - more than is sensible really.
                     {% endcomment %}
-                    {% block line_actions %}
+                 {% comment %}   {% block line_actions %}
                         <div class="well">
                             <h3>{% trans "With selected lines" %}:</h3>
 
@@ -312,10 +312,10 @@
                             </div>
                             <input type="submit" value="{% trans "Go!" %}" class="btn btn-primary" />
                         </div>
-                    {% endblock line_actions %}
+                    {% endblock line_actions %} {% endcomment %}
                 </form>
 
-                <form action="." method="post" id="order_status_form">
+              {% comment %}  <form action="." method="post" id="order_status_form">
                     {% csrf_token %}
                     {% block order_actions %}
                         <div class="well">
@@ -329,9 +329,9 @@
                             {% endif %}
                         </div>
                     {% endblock %}
-                </form>
+                </form> {% endcomment %}
 
-                {% block shipping_events %}
+                {% comment %} {% block shipping_events %}
                     <div class="table-header">
                         <h3>{% trans "Shipping Events" %}</h3>
                     </div>
@@ -417,10 +417,10 @@
                             {% endif %}
                         </table>
                     {% endwith %}
-                {% endblock %}
+                {% endblock %}  {% endcomment %}
             </div>
 
-            <div class="tab-pane {% if active_tab == 'shipping' %}active{% endif %}" id="shipping">
+     {% comment %}        <div class="tab-pane {% if active_tab == 'shipping' %}active{% endif %}" id="shipping">
                 {% block tab_shipping %}
                     <div class="table-header">
                         <h3>{% trans "Shipping" %}</h3>
@@ -465,7 +465,7 @@
                         </tbody>
                     </table>
                 {% endblock %}
-            </div>
+            </div> {% endcomment %}
 
             <div class="tab-pane {% if active_tab == 'payment' %}active{% endif %}" id="payment">
                 {% block tab_payment %}

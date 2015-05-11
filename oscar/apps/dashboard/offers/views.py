@@ -297,7 +297,7 @@ class OfferConditionView(OfferWizardStepView):
     url_name = 'dashboard:offer-condition'
     success_url_name = 'dashboard:offer-restrictions'
     previous_view = OfferBenefitView
-
+    title = 'Kosul'
     def get_instance(self):
         return self.offer.condition
 

@@ -1,7 +1,7 @@
 from django.utils.translation import ugettext_lazy as _
 from django.core.urlresolvers import reverse_lazy
 
-OSCAR_SHOP_NAME = 'Oscar'
+OSCAR_SHOP_NAME = 'e-ticaret'
 OSCAR_SHOP_TAGLINE = ''
 OSCAR_HOMEPAGE = reverse_lazy('promotions:home')
 
@@ -16,7 +16,7 @@ OSCAR_RECENTLY_VIEWED_COOKIE_NAME = 'oscar_history'
 OSCAR_RECENTLY_VIEWED_PRODUCTS = 20
 
 # Currency
-OSCAR_DEFAULT_CURRENCY = 'GBP'
+OSCAR_DEFAULT_CURRENCY = 'TL'
 
 # Paths
 OSCAR_IMAGE_FOLDER = 'images/products/%Y/%m/'
@@ -123,10 +123,6 @@ OSCAR_DASHBOARD_NAVIGATION = [
                 'url_name': 'dashboard:order-list',
             },
             {
-                'label': _('Statistics'),
-                'url_name': 'dashboard:order-stats',
-            },
-            {
                 'label': _('Partners'),
                 'url_name': 'dashboard:partner-list',
             },
@@ -143,62 +139,41 @@ OSCAR_DASHBOARD_NAVIGATION = [
     {
         'label': _('Customers'),
         'icon': 'icon-group',
-        'children': [
-            {
-                'label': _('Customers'),
-                'url_name': 'dashboard:users-index',
-            },
-            {
-                'label': _('Stock alert requests'),
-                'url_name': 'dashboard:user-alert-list',
-            },
-        ]
+		'url_name': 'dashboard:users-index',
     },
     {
         'label': _('Offers'),
         'icon': 'icon-bullhorn',
-        'children': [
-            {
-                'label': _('Offers'),
-                'url_name': 'dashboard:offer-list',
-            },
-            {
-                'label': _('Vouchers'),
-                'url_name': 'dashboard:voucher-list',
-            },
-        ],
+		'url_name': 'dashboard:offer-list',
     },
     {
-        'label': _('Content'),
-        'icon': 'icon-folder-close',
-        'children': [
-            {
-                'label': _('Content blocks'),
-                'url_name': 'dashboard:promotion-list',
-            },
-            {
-                'label': _('Content blocks by page'),
-                'url_name': 'dashboard:promotion-list-by-page',
-            },
-            {
-                'label': _('Pages'),
-                'url_name': 'dashboard:page-list',
-            },
-            {
-                'label': _('Email templates'),
-                'url_name': 'dashboard:comms-list',
-            },
-            {
-                'label': _('Reviews'),
-                'url_name': 'dashboard:reviews-list',
-            },
-        ]
+        'label': _('Yorumlar'),
+        'icon': 'icon-comment ',
+		'url_name': 'dashboard:reviews-list',
+        # 'children': [
+            # {
+                # 'label': _('Content blocks'),
+                # 'url_name': 'dashboard:promotion-list',
+            # },
+            # {
+                # 'label': _('Content blocks by page'),
+                # 'url_name': 'dashboard:promotion-list-by-page',
+            # },
+            # {
+                # 'label': _('Pages'),
+                # 'url_name': 'dashboard:page-list',
+            # },
+            # {
+                # 'label': _('Email templates'),
+                # 'url_name': 'dashboard:comms-list',
+            # },
+        #]
     },
-    {
-        'label': _('Reports'),
-        'icon': 'icon-bar-chart',
-        'url_name': 'dashboard:reports-index',
-    },
+    # {
+        # 'label': _('Reports'),
+        # 'icon': 'icon-bar-chart',
+        # 'url_name': 'dashboard:reports-index',
+    # },
 ]
 OSCAR_DASHBOARD_DEFAULT_ACCESS_FUNCTION = 'oscar.apps.dashboard.nav.default_access_fn'  # noqa
 

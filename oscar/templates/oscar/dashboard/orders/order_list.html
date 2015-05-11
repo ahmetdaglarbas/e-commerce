@@ -49,7 +49,7 @@
                 {% endif %}
             {% endfor %}
             <input type="submit" value="{% trans "Search" %}" class="btn btn-primary" />
-            <a data-toggle="modal" href="#SearchModal">{% trans "Advanced Search" %}</a>
+           {% comment %} <a data-toggle="modal" href="#SearchModal">{% trans "Advanced Search" %}</a> {% endcomment %}
         </form>
 
         <div class="modal hide fade" id="SearchModal">

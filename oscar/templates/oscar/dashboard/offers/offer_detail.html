@@ -75,7 +75,7 @@
                 <td><a href="{% url 'dashboard:offer-benefit' pk=offer.pk %}" class="btn">{% trans "Edit" %}</a></td>
             </tr>
             <tr>
-                <th>{% trans "Condition" %}</th>
+                <th>Koşul</th>
                 <td>{{ offer.condition.description|safe }}</td>
                 <td><a href="{% url 'dashboard:offer-condition' pk=offer.pk %}" class="btn">{% trans "Edit" %}</a></td>
             </tr>
