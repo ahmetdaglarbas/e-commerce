@@ -2277,7 +2277,7 @@ msgstr "Ürün türü başarıyla oluşturuldu"
 #: defaults.py:100
 #: templates/oscar/dashboard/catalogue/product_class_list.html:25
 msgid "Product Types"
-msgstr "Ürün Tipleri"
+msgstr "Ürün Türleri"
 
 #: apps/dashboard/catalogue/views.py:647
 #, python-format
@@ -3667,7 +3667,7 @@ msgstr "Eklenen kategoriler"
 #: templates/oscar/dashboard/ranges/range_list.html:28
 #: templates/oscar/dashboard/ranges/range_product_list.html:17
 msgid "Ranges"
-msgstr "Ürün grupları"
+msgstr "Ürün Grupları"
 
 #: apps/offer/models.py:972
 #, python-format
@@ -6555,7 +6555,7 @@ msgstr "Sepet tutarı (indirimler hariç)"
 #: templates/oscar/customer/order/order_detail.html:87
 #: templates/oscar/dashboard/orders/order_detail.html:189
 msgid "Basket total (inc. discounts)"
-msgstr "Sepet tutarı (indirimler hariç)"
+msgstr "Sepet tutarı (indirimler dahil)"
 
 #: templates/oscar/customer/order/order_detail.html:102
 #: templates/oscar/dashboard/orders/order_detail.html:208

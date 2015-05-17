@@ -7,10 +7,10 @@ install:
 
 build_sandbox:
 	# Remove media
-	-rm -rf sites/sandbox/public/media/images
-	-rm -rf sites/sandbox/public/media/cache
-	-rm -rf sites/sandbox/public/static
-	-rm -f sites/sandbox/db.sqlite
+	#-rm -rf sites/sandbox/public/media/images
+	#-rm -rf sites/sandbox/public/media/cache
+	#-rm -rf sites/sandbox/public/static
+	#-rm -f sites/sandbox/db.sqlite
 	# Create database
 	# 'syncdb' is identical to migrate in Django 1.7+; but calling it twice should have no effect
 	sites/sandbox/manage.py syncdb --noinput
@@ -26,6 +26,8 @@ build_sandbox:
 	sites/sandbox/manage.py update_index catalogue
 
 sandbox: install build_sandbox
+
+tez: install
 
 geoip:
 	wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
