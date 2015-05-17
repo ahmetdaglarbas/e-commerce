@@ -93,7 +93,7 @@
                         <th>{% anchor 'number' _("Order number") %}</th>
                         <th>{% anchor 'total_incl_tax' _("Total inc tax") %}</th>
                         <th>{% trans "Number of items" %}</th>
-                        <th>{% trans "Status" %}</th>
+                       {% comment %}  <th>{% trans "Status" %}</th>  {% endcomment %}
                         <th>{% trans "Customer" %}</th>
                         <th>{% trans "Shipping address" %}</th>
                         <th>{% trans "Billing address" %}</th>
@@ -108,7 +108,7 @@
                         <td><a href="{% url 'dashboard:order-detail' number=order.number %}">{{ order.number }}</a></td>
                         <td>{{ order.total_incl_tax|currency:order.currency }}</td>
                         <td>{{ order.num_items }}</td>
-                        <td>{{ order.status|default:"-" }}</td>
+                      {% comment %}   <td>{% if order.status == "Pending" %}Beklemede{% elif order.status == "Cancelled" %}İptal edildi{% elif order.status == "Being processed" %}İşlem yapılıyor{% elif order.status == "Complete" %}Tamamlandı{% else %}-{% endif %}</td> {% endcomment %}
                         <td>
                             {% if order.guest_email %}
                                 {{ order.guest_email }}
@@ -130,7 +130,7 @@
             </table>
             {% endblock order_list %}
           
-            {% block order_actions %}
+           {% comment %} {% block order_actions %}
                 <div class="well">
                     <h3><i class="icon-warning"></i> {% trans "Change order status" %}:</h3>
                     {% if order_statuses %}
@@ -151,7 +151,7 @@
                         {% trans "This order can't have its status changed." %}
                     {% endif %}
                 </div>
-            {% endblock %}
+            {% endblock %} {% endcomment %}
            
 
             {% include "dashboard/orders/partials/bulk_edit_form.html" with status=active_status %}

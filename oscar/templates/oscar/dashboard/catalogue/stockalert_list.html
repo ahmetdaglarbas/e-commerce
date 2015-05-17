@@ -65,7 +65,7 @@
         <td>{{ alert.stockrecord.low_stock_threshold }}</td>
         <td>{{ alert.stockrecord.net_stock_level }}</td>
         <td>{{ alert.date_created }}</td>
-        <td>{{ alert.status }}</td>
+        <td>{% if alert.status == "Open" %}Uyarı AÇIK{% else %}Uyarı KAPALI{% endif %}</td>
         <td>
             <a class="btn btn-info" href="{% url 'dashboard:catalogue-product' pk=alert.stockrecord.product.id %}">{% trans "Update" %}</a>
         </td>

@@ -31,7 +31,7 @@
                 <tr>
                     <th>{% trans "Name" %}</th>
                     <th>{% trans "Num products" %}</th>
-                    <th>{% trans "Is public?" %}</th>
+                {% comment %}    <th>{% trans "Is public?" %}</th>  {% endcomment %} 
                     <th>{% trans "Date created" %}</th>
                     <th></th>
                 </tr>
@@ -52,11 +52,11 @@
                             <td>{{ range.num_products|default:"-" }}</td>
                         {% endif %}
 
-                        {% if range.is_public %}
+                      {% comment %}    {% if range.is_public %}
                             <td>{% trans "Yes" %}</td>
                         {% else %}
                             <td>{% trans "No" %}</td>
-                        {% endif %}
+                        {% endif %}  {% endcomment %} 
                         <td>{{ range.date_created }}</td>
                         <td>
                             <div class="btn-toolbar">

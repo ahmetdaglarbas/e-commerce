@@ -464,4 +464,4 @@ class ProductClassForm(forms.ModelForm):
 
     class Meta:
         model = ProductClass
-        fields = ['name', 'requires_shipping', 'track_stock', 'options']
+        fields = ['name', 'track_stock',]

@@ -1924,7 +1924,7 @@ msgstr[1] ""
 
 #: apps/customer/views.py:169
 msgid "Welcome back"
-msgstr ""
+msgstr "Tekrar hoşgeldiniz"
 
 #: apps/customer/views.py:217
 msgid "Thanks for registering!"
@@ -2729,7 +2729,7 @@ msgstr "'%s' durumu geçerli değil"
 #: apps/dashboard/orders/views.py:376
 #, python-format
 msgid "The new status '%s' is not valid for this order"
-msgstr "'%s' durumu bu sipariş için uygun değil"
+msgstr "Seçtiğiniz durum bu sipariş için uygun değil"
 
 #: apps/dashboard/orders/views.py:384 apps/dashboard/orders/views.py:567
 #, python-format
@@ -2739,7 +2739,7 @@ msgstr "Ödeme hatasından dolayı sipariş durumu değiştirilemedi: %s"
 #: apps/dashboard/orders/views.py:387 apps/dashboard/orders/views.py:559
 #, python-format
 msgid "Order status changed from '%(old_status)s' to '%(new_status)s'"
-msgstr "Sipariş durumu '%(old_status)s' dan '%(new_status)s' e değiştirildi"
+msgstr "Sipariş durumu değiştirildi"
 
 #: apps/dashboard/orders/views.py:433
 msgid "No valid action submitted"
@@ -5254,7 +5254,7 @@ msgstr ""
 
 #: templates/oscar/basket/partials/basket_content.html:15
 msgid "You could be missing out on offers!"
-msgstr ""
+msgstr "Kaçırdığınız kampanyalar var!"
 
 #: templates/oscar/basket/partials/basket_content.html:17
 #, python-format
@@ -5263,10 +5263,13 @@ msgid ""
 "                <div class=\"warning\">%(message)s to qualify for the <a href=\"%(url)s\">%(offer_name)s</a> special offer</div>\n"
 "            "
 msgstr ""
+"\n"
+"                <div class=\"warning\"><a href=\"%(url)s\">%(offer_name)s</a> kampanyası için %(message)s </div>\n"
+"            "
 
 #: templates/oscar/basket/partials/basket_content.html:28
 msgid "Items to buy now"
-msgstr " "
+msgstr "Şimdi satın alınacak ürünler"
 
 #: templates/oscar/basket/partials/basket_content.html:30
 #: templates/oscar/basket/partials/basket_content.html:169
@@ -8386,7 +8389,7 @@ msgstr ""
 
 #: templates/oscar/dashboard/users/detail.html:30
 msgid "General"
-msgstr ""
+msgstr "Genel"
 
 #: templates/oscar/dashboard/users/detail.html:44
 msgid "Yes,No"
@@ -8394,7 +8397,7 @@ msgstr "Evet,Hayır"
 
 #: templates/oscar/dashboard/users/detail.html:48
 msgid "Superuser"
-msgstr "Yönetici mi"
+msgstr "Yetkili Kullanıcı"
 
 #: templates/oscar/dashboard/users/detail.html:49
 #: templates/oscar/dashboard/users/detail.html:53
@@ -8784,7 +8787,7 @@ msgstr "Bu sayfaya erişebilmek için oturum açmalısınız"
 #: views/generic.py:81
 #, python-format
 msgid "You need to select some %ss"
-msgstr ""
+msgstr "Hiç %s seçmediniz"
 
 #: views/generic.py:192
 msgid "This is not a valid international phone format."

@@ -84,7 +84,7 @@
                         <th>Yazdığı yorum sayısı</th>
                         <td>{{ customer.reviews.count }}</td>
                     </tr>
-                    {% if customer.email %}
+                   {% comment %} {% if customer.email %}
                         <tr>
                             <th>{% trans "Actions" %}</th>
                             <td>
@@ -95,7 +95,7 @@
                                 </form>
                             </td>
                         </tr>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                 </table>
             </div>
         {% endblock %}
@@ -122,7 +122,7 @@
                                             <th>{% trans "Num items" %}</th>
                                             <th>{% trans "Total value" %}</th>
                                             <th>{% trans "Date placed" %}</th>
-                                            <th>{% trans "Status" %}</th>
+                                        {% comment %}  <th>{% trans "Status" %}</th> {% endcomment %}
                                             <th></th>
                                         </tr>
                                         {% for order in orders %}
@@ -131,7 +131,7 @@
                                                 <td>{{ order.num_items }}</td>
                                                 <td>{{ order.basket_total_incl_tax|currency }}</td>
                                                 <td>{{ order.date_placed|date }}</td>
-                                                <td>{{ order.status|default:"-" }}</td>
+                                               {% comment %} <td>{{ order.status|default:"-" }}</td>{% endcomment %}
                                                 <td><a href="{% url 'dashboard:order-detail' number=order.number %}" class="btn btn-info">{% trans "View" %}</a></td>
                                             </tr>
                                         {% endfor %}
@@ -164,7 +164,7 @@
                                         {% endif %}
                                     {% endif %}
                                 {% empty %}
-                                    <p>{% trans "This customer has not saved any addresses." %}</p>
+                                    <p>Bu müşteri hiç adres eklemedi</p>
                                 {% endfor %}
                             </div>
                         </div>
