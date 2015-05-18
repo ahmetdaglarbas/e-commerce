@@ -5665,6 +5665,9 @@ msgid ""
 "                Reviewed by you on %(review_date)s\n"
 "                "
 msgstr ""
+"\n"
+"                %(review_date)s tarihinde siz yorumladınız\n"
+"                "
 
 #: templates/oscar/catalogue/partials/review.html:27
 #, python-format

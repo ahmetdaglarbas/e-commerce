@@ -1,0 +1,8 @@
+INFO 2015-05-18 15:07:24,643 views Order #100003: beginning submission process for basket #3
+INFO 2015-05-18 15:07:24,654 views Order #100003: payment successful, placing order
+INFO 2015-05-18 15:07:24,775 mixins Order #100003 - sending ORDER_PLACED messages
+INFO 2015-05-18 15:07:24,785 utils Sending email to ogunacik@ymail.com
+INFO 2015-05-18 15:12:32,992 views Order #100004: beginning submission process for basket #4
+INFO 2015-05-18 15:12:33,001 views Order #100004: payment successful, placing order
+INFO 2015-05-18 15:12:33,130 mixins Order #100004 - sending ORDER_PLACED messages
+INFO 2015-05-18 15:12:33,137 utils Sending email to ogunacik@ymail.com

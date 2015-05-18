@@ -35,9 +35,4 @@ nosetests.xml
 /.tox/*
 
 # Example sites
-settings_local.py
-/sites/sandbox/assets/
-/sites/sandbox/public/
-/sites/sandbox/whoosh_index/
-/sites/sandbox/logs/
 sites/puppet/modules/
