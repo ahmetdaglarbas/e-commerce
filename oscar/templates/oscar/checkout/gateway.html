@@ -35,10 +35,10 @@
                     {{ form.options.2 }}
                     <div class="form-inline">
                         {{ form.password }}
-                        <small><a href="{% url 'password-reset' %}" tabindex="-1">{% trans "Get a password reminder" %}</a></small>
+                        {% comment %}<small><a href="{% url 'password-reset' %}" tabindex="-1">{% trans "Get a password reminder" %}</a></small>{% endcomment %}
                         {% for error in form.password.errors %}
                             <span class="error-block">{{ error }}</span>
-                        {% endfor %}
+                        {% endfor %} 
                     </div>
                 </div>
             </div>

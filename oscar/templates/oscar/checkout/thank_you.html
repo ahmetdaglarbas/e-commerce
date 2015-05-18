@@ -263,7 +263,7 @@
                             </tr>
                         {% endif %}
 
-                        {% block post_order_action_totals %}
+                      {% comment %}  {% block post_order_action_totals %}
                             {% with actions=order.post_order_actions %}
                                 {% if actions %}
                                     <tr>
@@ -279,7 +279,7 @@
                                     {% endfor %}
                                 {% endif %}
                             {% endwith %}
-                        {% endblock post_order_action_totals %}
+                        {% endblock post_order_action_totals %} {% endcomment %}
 
                         {% block order_total %}
                             <tr>
@@ -296,7 +296,7 @@
         </div>
     {% endblock basket_totals %}
 
-    {% block order_tracking %}
+   {% comment %} {% block order_tracking %}
         {% if not order.user %}
             <div class="sub-header">
                 <h2>{% trans "Tracking your order" %}</h2>
@@ -304,7 +304,7 @@
             <p>{% trans "You can track the status of your order" %}</p>
             <a class="btn btn-primary" href="{% url 'customer:anon-order' order_number=order.number hash=order.verification_hash %}">{% trans "View order status" %}</a>.
         {% endif %}
-    {% endblock %}
+    {% endblock %} {% endcomment %}
 
 
     {% block order_actions %}

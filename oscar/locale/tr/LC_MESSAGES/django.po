@@ -3718,7 +3718,7 @@ msgstr "Koşul değerleri"
 #: apps/offer/models.py:1217
 #, python-format
 msgid "Spend %(value)s more from %(range)s"
-msgstr "Ürün grubundan %(value)s TL'lik daha alışveriş yapın"
+msgstr "%(range)s ürün grubundan %(value)s daha alışveriş yapın"
 
 #: apps/offer/models.py:1338
 #, python-format
@@ -3736,7 +3736,7 @@ msgstr ""
 #: apps/offer/models.py:1401
 #, python-format
 msgid "%(value)s discount on %(range)s"
-msgstr ""
+msgstr "%(range)s ürün grubunda %(value)s indirim"
 
 #: apps/offer/models.py:1418
 msgid "Absolute discount benefit"
@@ -6048,11 +6048,11 @@ msgstr ""
 
 #: templates/oscar/checkout/thank_you.html:294
 msgid "Tracking your order"
-msgstr ""
+msgstr "Siparişinizi takibi"
 
 #: templates/oscar/checkout/thank_you.html:296
 msgid "You can track the status of your order"
-msgstr ""
+msgstr "Siparişinizin durumunu takip edebilirsiniz"
 
 #: templates/oscar/checkout/thank_you.html:307
 msgid "Print this page"
